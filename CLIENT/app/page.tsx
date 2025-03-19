@@ -33,9 +33,6 @@ export default function LoginPage() {
     if(!socket)
       return;
 
-    console.log("입력된 아이디:", userId);
-    console.log("입력된 비밀번호:", password);
-
     try {
       const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/login`,
         { userId, password },
@@ -46,12 +43,24 @@ export default function LoginPage() {
 
       if(res.status === 200){
         socket.emit("login",{ userId, password });
-        router.push("/dashboard");
+        router.push(`/dashboard?userId=${userId}`); 
       }
     } catch (error) {
       alert("로그인 실패");
     }
   }
+
+  const handleRegister = async () => {
+    try {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/register`, { userId, password });
+
+      if (res.status === 200) {
+        alert("회원가입 성공! 이제 로그인하세요.");
+      }
+    } catch (error) {
+      alert("회원가입 실패");
+    }
+  };
 
   return (
     <div className="login-container">
@@ -70,6 +79,7 @@ export default function LoginPage() {
         value={password}
         onChange={(e)=>setPassword(e.target.value)}/>
         <button className="login-button" onClick={handleLogin}>로그인</button>
+        <button onClick={handleRegister}>회원가입</button>
       </div>
     </div>
   );

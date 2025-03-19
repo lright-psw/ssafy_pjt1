@@ -5,6 +5,7 @@ import session from "express-session";
 import dotenv from "dotenv";
 import { Server } from "socket.io";
 import cookieParser from "cookie-parser";
+import db from "./db.js";
 
 dotenv.config(); // 환경변수 로드
 
@@ -59,7 +60,7 @@ io.use((socket, next) => {
 
 // Socket.io 연결
 io.on("connection", (socket) => {
-    console.log("클라이언트 연결됨:", socket.id);
+    console.log("클라이언트 로그인 소켓 연결됨:", socket.id);
 
     // 로그인 이벤트
     socket.on("login", ({ userId, password }) => {
@@ -94,7 +95,7 @@ io.on("connection", (socket) => {
     });
 
     socket.on("disconnect", () => {
-        console.log("클라이언트 연결 종료:", socket.id);
+        console.log("로그인 소켓 연결 종료:", socket.id);
     });
 });
 
@@ -122,6 +123,20 @@ app.post("/api/login", (req, res) => {
         console.error("로그인 처리 중 오류 발생:", error);
         res.status(500).json({ message: "서버 내부 오류" });
     }
+});
+
+app.post("/api/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.clearCookie("session-cookie");
+        res.json({ message: "로그아웃 성공" });
+    });
+});
+
+app.get("/api/main", (req, res) => {
+    if (req.session.user) {
+        return res.json({ user: req.session.user });
+    }
+    return res.status(401).json({ message: "세션 없음" });
 });
 
 // 서버 실행
