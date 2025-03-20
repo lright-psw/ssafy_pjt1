@@ -27,8 +27,7 @@ export default function LoginPage() {
     });
 
     newSocket.on("registerSuccess", () => {
-      alert("회원가입 성공! 자동 로그인됩니다.");
-      handleLogin();
+      alert("회원가입 성공!");
     });
 
     newSocket.on("registerFail", (data) => {
