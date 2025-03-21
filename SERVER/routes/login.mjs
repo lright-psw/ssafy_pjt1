@@ -1,7 +1,6 @@
-// 소켓통신 떄문에 버려진 다 구현된 REST API.... 슬프다.
 // 로그인 & 로그아웃 API
 import express from "express";
-import pool from "../db.mjs";
+import pool from "../db/db.mjs";
 
 const authRoute = express.Router();
 

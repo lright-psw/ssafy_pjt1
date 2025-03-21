@@ -5,9 +5,8 @@ import cors from "cors";
 import session from "express-session";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-// import loginRoutes from "./routes/login.mjs";
+import loginRoutes from "./routes/login.mjs";
 import sessionRoutes from "./routes/session.mjs";
-import { initSocket } from "./socket/socket.mjs";
 import pool from "./db/db.mjs";
 
 dotenv.config(); // 환경변수 로드
@@ -20,9 +19,9 @@ const server = http.createServer(app);
 
 // CORS 설정
 app.use(cors({
-    origin: FRONTEND_URL,
+    origin: process.env.FRONT_SERVER_URL,
     credentials: true
-}));
+  }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -36,17 +35,17 @@ const sessionMiddleware = session({
     cookie: {
         httpOnly: true,
         secure: false,
-        maxAge: 3600000
+        maxAge: 1000 * 60 * 60 * 24 * 7 // 7일동안 유지됨됨
     },
     name: "session-cookie"
 });
 
 app.use(sessionMiddleware);
-// app.use("/api", loginRoutes);
+app.use("/api", loginRoutes);
 app.use("/api", sessionRoutes);
 
-// 소켓 활성화 
-initSocket(server, sessionMiddleware);
+// // 소켓 활성화 
+// initSocket(server, sessionMiddleware);
 
 // 서버 실행
 server.listen(PORT, async () => {
