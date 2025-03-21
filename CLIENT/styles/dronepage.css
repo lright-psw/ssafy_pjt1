@@ -1,0 +1,37 @@
+@import "tailwindcss";
+.dronpage-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.dronpage-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.dronpage-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dronpage-section {
+  background-color: #222;
+  padding: 15px;
+  border-radius: 10px;
+  width: 380px;
+}
+
+.dronpage-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.dronpage-section img {
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+

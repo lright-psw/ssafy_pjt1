@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import "@/styles/mainpage.css";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -57,7 +58,7 @@ export default function DashboardPage() {
   return (
     <div>
       <p>환영합니다, {user.id}님</p>
-      <button onClick={handleLogout}>로그아웃</button>
+      <button className="hide-btn" onClick={handleLogout}>로그아웃</button>
     </div>
   );
 }
