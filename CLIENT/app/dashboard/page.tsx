@@ -56,7 +56,6 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <h1>안녕하세요</h1>
       <p>환영합니다, {user.id}님</p>
       <button onClick={handleLogout}>로그아웃</button>
     </div>
