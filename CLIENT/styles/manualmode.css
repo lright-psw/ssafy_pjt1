@@ -1,0 +1,52 @@
+.manualmode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #171717;
+  }
+  
+  .manualmode-box {
+    background-color: #f3f3f3;
+    padding: 30px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+  }
+  
+  .manualmode-box label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #111;
+  }
+  
+  .manualmode-box input {
+    height: 35px;
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  .manualmode-box button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .manualmode-box button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+  

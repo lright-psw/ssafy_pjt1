@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* styles/loginPage.css */
+.login-container {
+    @apply flex justify-center items-center h-screen bg-gray-900;
+  }
+  
+  .login-box {
+    @apply bg-gray-200 p-6 rounded-lg shadow-lg;
+  }
+  
+  .login-title {
+    @apply text-xl font-bold mb-4 text-gray-800;
+  }
+  
+  .login-input-field {
+    @apply w-full p-2 mb-3 border rounded text-gray-800;
+  }
+
+  .login-button {
+    @apply w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition;
+  }
+
+  .register-button {
+    @apply mt-[10px] w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-700 transition;
+}

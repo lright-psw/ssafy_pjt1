@@ -1,0 +1,11 @@
+2025/03/25 09:02:18 [emerg] 10976#26896: no "events" section in configuration
+2025/03/25 09:02:44 [emerg] 12812#14432: no "events" section in configuration
+2025/03/25 09:03:27 [emerg] 27176#26084: no "events" section in configuration
+2025/03/25 09:04:07 [emerg] 12020#20456: no "events" section in configuration
+2025/03/25 09:04:21 [emerg] 2744#5536: no "events" section in configuration
+2025/03/25 09:04:24 [emerg] 2196#10632: no "events" section in configuration
+2025/03/25 09:04:28 [emerg] 28612#2808: no "events" section in configuration
+2025/03/25 09:05:55 [emerg] 10144#17496: no "events" section in configuration
+2025/03/25 09:26:30 [error] 22484#1728: *357 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 211.223.105.158, server: 121.147.32.84, request: "GET /dashboard/dronepage HTTP/1.1", upstream: "http://[::1]:3000/dashboard/dronepage", host: "121.147.32.84", referrer: "http://121.147.32.84/dashboard"
+2025/03/25 09:35:12 [notice] 13384#23580: signal process started
+2025/03/25 10:05:47 [notice] 13364#13048: signal process started

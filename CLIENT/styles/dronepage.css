@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+.dronpage-container {
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+  background-color: #171717;
+}
+
+.dronpage-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 위쪽 박스 그룹 (경로, 카메라) */
+.dronpage-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* 아래쪽 3D 회전 */
+.dronpage-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+/* 공통 섹션 스타일 */
+.dronpage-section {
+  background-color: #222;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+/* 섹션 내부 타이틀 */
+.dronpage-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* 이미지 공통 */
+.dronpage-section img {
+  border-radius: 10px;
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+/* 반응형 처리: 모바일에서 수직 정렬 */
+@media (max-width: 768px) {
+  .dronpage-top,
+  .dronpage-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dronpage-section {
+    width: 90%;
+  }
+}
