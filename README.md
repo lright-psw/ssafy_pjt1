@@ -42,10 +42,11 @@
 2. 연결할 라즈베리파이에 `node.js`와 `python`을 설치한다.
 3. `npm i ws`로 웹소켓을 다운 받는다.
 4. raspberrypi 파일의 내용을 연결한 라즈베리파이에 넣어준다.
-5. SERVER, CLIENT, 라즈베리파이를 각각 실행시킨다.
+5. SERVER, CLIENT 폴더에 들어가 cmd를 키고 `npm i`를 입력한다.
+6. SERVER, CLIENT, 라즈베리파이를 각각 실행시킨다.
   - SERVER 실행 명령어 `npm run dev`
-  - CLIENT 실행 명령어 `npm start`
+  - CLIENT 실행 명령어 `npm run build ➡️ npm start`
   - 라즈베리파이 실행 명령어 `node index.mjs`
-6. nginx 폴더로 들어가 cmd실행후 `.\nginx.exe`를 입력하여 nginx를 싱행시킨다.
+7. nginx 폴더로 들어가 cmd실행후 `.\nginx.exe`를 입력하여 nginx를 싱행시킨다.
 
 #### ℹ️ 보안상 .env 파일이 없습니다.
